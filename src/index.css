@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+  /* margin: 0;
+  padding: 0; */
+  box-sizing: border-box;
+  font-family: "Beatrice Deck Trial", sans-serif;
+}
+
+@import "tailwindcss";
+
+/* Configure your global container settings right here */
+@utility container {
+  margin-inline: auto; /* This acts as mx-auto (centers it) */
+  padding-inline: 1rem; /* This acts as px-4 (adds mobile padding) */
+
+  /* Optional: If you want the padding to grow on larger desktop screens */
+  @media (width >= 1024px) {
+    padding-inline: 2rem;
+  }
+}
