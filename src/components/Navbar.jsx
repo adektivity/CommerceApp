@@ -13,6 +13,9 @@ function Navbar() {
         <div className="flex items-center justify-between">
           {/* Responsive Menu */}
           <div className="flex items-center justify-between gap-4">
+            <button className="hidden sm:block cursor-pointer">
+              <BiMenuAltLeft className="text-3xl" />
+            </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-3xl cursor-pointer sm:hidden focus:outline-none z-50"
