@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
@@ -70,13 +70,15 @@ function App() {
     );
   }
 
-  function emptyCart() {}
+  function emptyCart() {
+    setCart([]);
+  }
 
   console.log(cart);
   return (
     <>
       <div className="min-h-screen bg-[#e6e6e6] flex flex-col">
-        <Navbar />
+        <Navbar cart={cart} />
         <main className="pt-8">
           <Routes>
             <Route path="/" element={<Home products={products} />} />
@@ -98,6 +100,7 @@ function App() {
                   onClick={removeFromCart}
                   cart={cart}
                   onUpdateCartItem={updateCartItems}
+                  emptyCart={emptyCart}
                 />
               }
             />

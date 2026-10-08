@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
-function Cart({ cart, onClick, onUpdateCartItem }) {
+function Cart({ cart, onClick, onUpdateCartItem, emptyCart }) {
   const subTotal = cart.reduce(
     (sum, item) => Math.floor(sum + item.price * item.quantity),
     0,

@@ -17,7 +17,7 @@ function Home({ products }) {
     setCurrentIndex((prev) => (prev - 1 + products.length) % products.length);
   };
   return (
-    <div min-h-screen w-full>
+    <div className="min-h-screen w-full">
       <div className="container mx-auto sm:px-0">
         <div className="flex flex-col gap-4">
           <div>

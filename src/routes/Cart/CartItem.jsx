@@ -5,12 +5,12 @@ import { LuX, LuPlus, LuMinus, LuRefreshCcw } from "react-icons/lu";
 function CartItem({ cartItem, onClick, onUpdateCartItem }) {
   return (
     <>
-      <div className="flex flex-col gap-6 w-66.25">
-        <div className="relative w-66.25 h-78.5 aspect-4/5 bg-[#f2f3f8] border border-[#D9D9D9] overflow-hidden">
+      <div className="flex flex-col gap-6 w-full max-w-66.25">
+        <div className="relative w-full aspect-4/5 bg-[#f2f3f8] border border-[#D9D9D9] overflow-hidden">
           <img
             src={cartItem.image}
             alt={cartItem.title}
-            className="w-full h-full object-contain object-center"
+            className="w-full h-full object-cover object-center"
           />
           <button className="absolute bottom-4 right-4 w-8 h-8 bg-white rounded-sm flex items-center justify-center shadow-sm hover:bg-[#f2f3f8] transition-colors">
             <IoHeartCircleSharp className="w-3 h-3 text-zinc-400" />

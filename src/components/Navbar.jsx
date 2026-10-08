@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BiMenuAltLeft, BiX } from "react-icons/bi";
 import { IoHeartCircleSharp } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { LiaUserCircleSolid } from "react-icons/lia";
 
-function Navbar() {
+function Navbar({ cart }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const cartBadge = cart.length;
   return (
     <nav className="sticky top-0 z-50 bg-[#e6e6e6] py-6 left-0 w-full">
       <div className="container mx-auto sm:px-0 relative">
@@ -61,11 +63,15 @@ function Navbar() {
             <Link to="/wishlist" className="hidden sm:block">
               <IoHeartCircleSharp className="text-3xl" />
             </Link>
-            <Link to="/cart" className="hidden sm:block">
-              Cart
-            </Link>
-            <Link to="/cart" className="block sm:hidden">
-              <IoCartOutline className="text-3xl " />
+            <Link to="/cart" className="relative">
+              <IoCartOutline className="text-3xl" />
+              {cartBadge > 0 && (
+                <span className="absolute -top-1 -right-1 ">
+                  <div className="inline-flex items-center bg-red-500 text-xs text-white font-bold px-1.5 py-0.5 rounded-full border-2 border-[#e6e6e6]">
+                    {cartBadge}
+                  </div>
+                </span>
+              )}
             </Link>
             <Link to="/">
               <LiaUserCircleSolid className="text-3xl" />

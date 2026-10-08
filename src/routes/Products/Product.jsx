@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function Product({ product }) {
   return (
     <>
-      <div className="flex flex-col gap-6 w-66.25">
-        <div className="relative w-66.25 h-78.5 aspect-4/5 bg-[#f2f3f8] overflow-hidden border border-[#D9D9D9]">
+      <div className="flex flex-col gap-6 w-full max-w-66.25">
+        <div className="w-full aspect-4/5 bg-[#f2f3f8] overflow-hidden border border-[#D9D9D9]">
           <Link to={`products/${product.id}`}>
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-full object-contain object-center"
+              className="w-full h-full object-cover object-center"
             />
           </Link>
         </div>
